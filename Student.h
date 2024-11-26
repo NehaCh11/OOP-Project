@@ -1,6 +1,7 @@
 #include "Person.h"
-using namespace std;
 #include "Course.h"
+
+using namespace std;
 
 class Student : public Person {
 

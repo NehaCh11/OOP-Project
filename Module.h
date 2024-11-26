@@ -10,12 +10,15 @@ private:
 
 public:
     //Constructor
+    Module();
     Module(string title, string id);
 
     //Getters 
     
     //Setters
-    void setModuleContents(string& contents);
+    void setModuleTitle(const string&  title);
+    void setModuleId(const string&  id);
+    void setModuleContents(const string& contents);
     
     //Dispaly func
     void showModuleInfo();

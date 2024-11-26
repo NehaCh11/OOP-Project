@@ -11,25 +11,32 @@ private:
     string courseCode;
     string courseDescription;
     Instructor* instructor;  //aggregation
-    vector<Student*> enrolledStudents; //asssocaition
-    vector<Module> modules; //composition
+    vector<studentPtr*> enrolledStudents; //asssocaition
+
+    int numOfModules;
+    int modulesCount;
+    Module* modulesPtr;
 
 public:
 // constructor
-    Course();
+    Course(const string& title, const string& code, const string& desc, int numModules);
     //destructor
     ~Course();
+
+//Setters
+void setInstrutor(Instructor* instr);
+
 //getters
-    string getCourseTitle();
-    string getCourseCode();
-    string getDescription();
+    string getCourseTitle() const;
+    string getCourseCode() const;
+    string getDescription() const;
 //relationships
     void enrollStudent(Student* student);
-    void addModule(Module& module);
+    void addModule(string title, string id, string contents);
 //display functions
-    void displayCourseInfo();
-    void displayModules();
-    Void displayEnrolledStudents();
+    void displayCourseInfo() const;
+    void displayModules() const;
+    Void displayEnrolledStudents() const;
 };
 
 
